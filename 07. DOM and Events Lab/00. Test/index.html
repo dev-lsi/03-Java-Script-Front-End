@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <button class="clickButton" onclick="myFunction()">Click</button>
+    <button style="-webkit-user-drag:true;">SecondButton</button>
+    <div style="height:200px">first div</div>
+    <div style="width:500px;height:300px; background-color:red">this is my div</div>
+    <input class="inp" type="text">
+    <input class="inp" type="text">
+    <input class="inp" type="text">
+    <input class="inp" type="text">
+    <input class="inp" type="text">
+    <button class="sumButton">Sum</button>
+
+
+    <script>
+      function changeColor() {
+        const sumButton = document.querySelector('.sumButton');
+        sumButton.addEventListener('onclick', getSum());
+         
+        function getSum(){
+            const inputs = Array.from(document.querySelectorAll('.inp'));
+            console.log(inputs)
+            const sum = inputs.map(x=>Number(x.value)).reduce((acc,curr)=>{
+
+              acc+=curr;
+              return acc;
+
+            },0);
+            
+            resP=document.createElement('p');
+            resP.textContent=sum;
+            console.log(sum)
+
+            const res = document.appendChild(resP); 
+        }
+
+        
+
+      }
+
+      changeColor();
+
+    </script>
+</body>
+</html>

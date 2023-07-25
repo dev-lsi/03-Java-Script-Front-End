@@ -147,9 +147,9 @@ function removeTask(commandData) {
 
     }
     else {
-
+        console.log(` LENGTH: ${table.length}`)
         table.splice(index, 1);
-
+        console.log(` LENGTH: ${table.length}`)
     }
 
 
